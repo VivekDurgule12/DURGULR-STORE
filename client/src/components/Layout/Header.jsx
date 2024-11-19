@@ -67,11 +67,11 @@ const Header = () => {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      {auth?.user?.name}
+                      {auth?.user?.name} 
                     </NavLink>
                     <ul className="dropdown-menu">
                       <li className="nav-item">
-                        <NavLink to="/dashboard" className="dropdown-item">
+                        <NavLink to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user" }` } className="dropdown-item">
                           Dashboard
                         </NavLink>
                       </li>

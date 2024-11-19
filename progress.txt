@@ -11,5 +11,5 @@ react seo : done
 Login Registering: done 
 contaxt api & logout : done  
 private Routes :done
-Forget Password Role : 8:00
-admin & user  panel : pending
+Forget Password Role : done
+admin & user  panel : 8:00 pending 
