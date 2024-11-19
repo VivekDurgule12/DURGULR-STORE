@@ -2,7 +2,7 @@ import React from "react";
 import toast from "react-hot-toast";
 import { MdShoppingBag } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
-import { useAuth } from "../context/auth";
+import { useAuth } from "../../context/auth";
 const Header = () => {
   const [auth, setAuth] = useAuth();
   const handleLogout = () => {
@@ -59,15 +59,32 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <li className="nav-item">
+                  <li className="nav-item dropdown">
                     <NavLink
-                      onClick={handleLogout}
-                      to="/login"
-                      className="nav-link"
-                      href="#"
+                      className="nav-link dropdown-toggle text-decoration: none ; text-center"
+                      to="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
                     >
-                      Logout
+                      {auth?.user?.name}
                     </NavLink>
+                    <ul className="dropdown-menu">
+                      <li className="nav-item">
+                        <NavLink to="/dashboard" className="dropdown-item">
+                          Dashboard
+                        </NavLink>
+                      </li>
+                      <li className="dropdown-item">
+                        <NavLink
+                          onClick={handleLogout}
+                          to="/login"
+                          className="dropdown-item"
+                        >
+                          Logout
+                        </NavLink>
+                      </li>
+                    </ul>
                   </li>
                 </>
               )}

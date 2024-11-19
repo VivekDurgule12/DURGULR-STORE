@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./components/Routes/Private";
 import About from "./pages/About";
+import ForgotPassword from "./pages/Auth/ForgotPassword";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import Contact from "./pages/Contact";
@@ -18,6 +19,7 @@ function App() {
           <Route path="" element={<Dashboard />} />
         </Route>
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
